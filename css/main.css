@@ -28,25 +28,52 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 24px;
   color: #fff;
   z-index: 10;
   text-align: center;
 }
 
 #text-section p {
-  font-size: 200px
+  font-size: 50px;
+  font-weight: 20px;
 }
 
 .text-section-animation {
   display: block;
   opacity: 0;
-  animation: fadeInGlow 2s forwards, glow 1s infinite alternate;
+  animation: fadeInGlow 2s forwards, glow 1s infinite;
+}
+
+#text-section-bersiap {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(300%);
+  color: #fff;
+  z-index: 10;
+  text-align: center;
+}
+
+#text-section-bersiap p {
+  font-size: 50px;
+  font-weight: 20px;
+}
+
+.text-section-animation-bersiap {
+  display: block;
+  opacity: 1;
+  animation: fadeOutGlow 1s forwards, glow 1s infinite;
 }
 
 @keyframes fadeInGlow {
   to {
     opacity: 1;
+  }
+}
+
+@keyframes fadeOutGlow {
+  to {
+    opacity: 0;
   }
 }
 
@@ -1641,16 +1668,9 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  #text-section {
-      font-size: 1.5rem; /* Sesuaikan ukuran font untuk perangkat mobile */
-  }
-}
-
 .container * {
   -webkit-animation-play-state: paused !important;
   animation-play-state: paused !important;
-  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */
