@@ -23,6 +23,17 @@ body {
   perspective: 1000px;
 }
 
+#countdown {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(250%);
+  color: #fff;
+  z-index: 10;
+  text-align: center;
+  font-size: 30px;
+}
+
 #text-section {
   position: absolute;
   top: 20px;
