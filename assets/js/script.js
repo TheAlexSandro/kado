@@ -54,7 +54,7 @@ onload = async () => {
     var birthday = true
 
     if (birthday == true) {
-        var countDownDate = new Date("Jun 07, 2024 20:53:00").getTime();
+        var countDownDate = new Date("Jun 10, 2024 00:00:00").getTime();
         var serverTime = await getServerTime();
         var initialClientTime = new Date().getTime();
 
