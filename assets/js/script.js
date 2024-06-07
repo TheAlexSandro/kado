@@ -52,7 +52,7 @@ onload = async () => {
     var birthday = true
 
     if (birthday == true) {
-        var countDownDate = new Date("Jun 10, 2024 00:00:00").getTime();
+        var countDownDate = new Date("Jun 07, 2024 17:42:00").getTime();
         var serverTime = await getServerTime();
         var initialClientTime = new Date().getTime();
 
@@ -75,11 +75,14 @@ onload = async () => {
             } else {
                 loadFlower()
             }
-            if (days == 0 && hours == 0 && minutes == 0 && seconds <= 10) {
-                count.innerHTML = `<p>${seconds}</p>`;
-            } else {
-                count.innerHTML = `<p style="font-size: 25px;">Not available until ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds.</p>`;
-            }
+            try {
+                if (days == 0 && hours == 0 && minutes == 0 && seconds <= 10) {
+                    count.classList.add('glow-animation')
+                    count.innerHTML = `<p>${seconds}</p>`;
+                } else {
+                    count.innerHTML = `<p style="font-size: 25px;">Not available until ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds.</p>`;
+                }
+            } catch(e) { console.log(e) }
 
             if (distance <= 0) {
                 clearInterval(countdownfunction);

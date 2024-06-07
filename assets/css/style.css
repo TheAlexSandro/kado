@@ -24,6 +24,26 @@ body {
     padding: 30px;
 }
 
+.glow-animation {
+    -webkit-animation: glow-animation 1s ease-in-out infinite alternate;
+    -moz-animation: glow-animation 1s ease-in-out infinite alternate;
+    animation: glow-animation 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow-animation {
+    0%,
+    100% {
+        color: #111;
+        text-shadow: none;
+    }
+
+    10%,
+    90% {
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+}
+
 #content {
     visibility: hidden;
 }
