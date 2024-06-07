@@ -11,15 +11,31 @@ function loadFlower() {
         document.title = 'Selamat Ulang Tahun!'
         var getBersiap = document.getElementById('text-section-bersiap')
         getBersiap.classList.remove("hidden")
-        getBersiap.classList.add("text-section-animation")
+        getBersiap.classList.add("text-animation")
 
         setTimeout(() => {
             getBersiap.classList.add("text-section-animation-bersiap")
             document.getElementById('flower').classList.remove("container");
             setTimeout(() => {
-                var textElement = document.getElementById("text-section");
+                document.body.style.overflowY = 'visible'
+                var textElement = document.getElementById("text");
+                var descElement = document.getElementById('desc')
+                var spaceDiv = document.querySelector('.space')
+                var deviceWidth = window.innerWidth
+
+                if (deviceWidth <= 740) {
+                    spaceDiv.style.marginTop = `1150px`
+                } else {
+                    spaceDiv.style.marginTop = `1040px`
+                }
                 textElement.classList.remove("hidden")
-                textElement.classList.add("text-section-animation")
+                document.getElementById('header').classList.add("text-animation")
+                var data = {
+                    "ucapan": "Selamat ulang tahun yang ke-18 asa! Semoga di umur yang semakin bertambah ini, diberikan kelancaran dalam menjalani hidup. Bertambahnya usia, bertambahnya juga rezeki, kami semua berharap kamu teurs menjadi pribadi yang berwibawa dan patut dicontoh. Di usia yang semakin bertambah, bertambah juga tanggung jawab hidup, semoga kamu bisa melewati semua halangan itu dan tetap bersemangatlah setiap hari, karena mungkin ada sesuatu yang baik yang sedang menantimu. Ini adalah hadiah yang kami persembahkan dengan sebaik mungkin, semoga tuhan selalu memberikanmu kesehatan serta kelancaran hidup, dan <b>terimakasih karena telah menjadi teman baik kami</b>. Muah!",
+                    "credit": "Sayang kami. Kevin, Kira, Jihan dan teman-teman."
+                }
+                descElement.innerHTML = `${data.ucapan}<br><br>${data.credit}`
+                descElement.classList.add(`desc-animation`)
             }, 6000);
         }, 3000)
     } catch { }
