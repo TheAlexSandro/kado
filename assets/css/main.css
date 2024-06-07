@@ -117,6 +117,41 @@ body {
   display: none;
 }
 
+.options {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  color: #fff;
+  z-index: 999;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn {
+  margin-top: 30px;
+  border-radius: 30px;
+  height: 50px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #39c6d6;
+  border-style: none;
+  animation: 20s linear infinite;
+  transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  animation: 20s linear infinite;
+  transition: 0.3s ease-in-out;
+}
+
 .night {
   position: fixed;
   left: 50%;
@@ -1700,6 +1735,10 @@ body {
 }
 
 @media (max-width: 740px) {
+  #text-section-bersiap p {
+    font-size: 40px;
+  }
+
   #text h1 {
     font-size: 30px;
     font-weight: 20px;

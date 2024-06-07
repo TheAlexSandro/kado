@@ -6,9 +6,10 @@ function getParameter() {
     return parameter;
 }
 
-function loadFlower() {
+function loadFlower(query) {
     try {
         document.title = 'Selamat Ulang Tahun!'
+        document.getElementById('ops').style.display = 'none'
         var getBersiap = document.getElementById('text-section-bersiap')
         getBersiap.classList.remove("hidden")
         getBersiap.classList.add("text-animation")
@@ -17,6 +18,7 @@ function loadFlower() {
             getBersiap.classList.add("text-section-animation-bersiap")
             document.getElementById('flower').classList.remove("container");
             setTimeout(() => {
+                if (query == 'yes') { document.getElementById('main-audio').play() }
                 document.body.style.overflowY = 'visible'
                 var textElement = document.getElementById("text");
                 var descElement = document.getElementById('desc')
@@ -36,7 +38,7 @@ function loadFlower() {
                 }
                 descElement.innerHTML = `${data.ucapan}<br><br>${data.credit}`
                 descElement.classList.add(`desc-animation`)
-            }, 6000);
+            }, 5000);
         }, 3000)
     } catch { }
 }
@@ -52,7 +54,7 @@ onload = async () => {
     var birthday = true
 
     if (birthday == true) {
-        var countDownDate = new Date("Jun 10, 2024 00:00:00").getTime();
+        var countDownDate = new Date("Jun 07, 2024 20:53:00").getTime();
         var serverTime = await getServerTime();
         var initialClientTime = new Date().getTime();
 
@@ -72,9 +74,8 @@ onload = async () => {
                 if (getParameter() !== 'index.html') {
                     window.location.href = 'index.html'
                 }
-            } else {
-                loadFlower()
             }
+
             try {
                 if (days == 0 && hours == 0 && minutes == 0 && seconds <= 10) {
                     count.classList.add('glow-animation')
@@ -82,11 +83,11 @@ onload = async () => {
                 } else {
                     count.innerHTML = `<p style="font-size: 25px;">Not available until ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds.</p>`;
                 }
-            } catch(e) { console.log(e) }
+            } catch { }
 
             if (distance <= 0) {
                 clearInterval(countdownfunction);
-                count.style.display = 'none'
+                try { count.style.display = 'none' } catch { }
                 document.title = 'Sebuah Hadiah'
 
                 try {
