@@ -6,6 +6,10 @@ function getParameter() {
     return parameter;
 }
 
+function loadMenu() {
+    try { document.getElementById('ops').classList.remove('hidden') } catch { }
+}
+
 function loadFlower(query) {
     try {
         document.title = 'Selamat Ulang Tahun!'
@@ -74,6 +78,8 @@ onload = async () => {
                 if (getParameter() !== 'index.html') {
                     window.location.href = 'index.html'
                 }
+            } else {
+                loadMenu()
             }
 
             try {
