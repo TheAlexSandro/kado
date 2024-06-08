@@ -58,7 +58,7 @@ onload = async () => {
     var birthday = true
 
     if (birthday == true) {
-        var countDownDate = new Date("Jun 10, 2024 00:00:00").getTime();
+        var countDownDate = new Date("Jun 08, 2024 17:50:00").getTime();
         var serverTime = await getServerTime();
         var initialClientTime = new Date().getTime();
 
@@ -75,8 +75,9 @@ onload = async () => {
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             if (distance > 0) {
-                if (getParameter() !== 'index.html') {
-                    window.location.href = 'index.html'
+                if (getParameter() !== 'main.html') {
+                    try { document.getElementById('info').innerHTML = `<br><h1>redirecting...</h1>` } catch { }
+                    window.location.href = 'main.html'
                 }
             } else {
                 loadMenu()
@@ -111,7 +112,7 @@ onload = async () => {
             window.location.href = 'index.html'
         } else {
             document.title = 'closed'
-            document.getElementById('countdown').innerHTML = `<p>Not available unless someone's birthday.</p>`
+            try { document.getElementById('info').innerHTML = `<br><h1>The event has over.</h1>` } catch { }
         }
     }
 }
