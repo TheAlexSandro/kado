@@ -37,7 +37,7 @@ function loadFlower(query) {
                 textElement.classList.remove("hidden")
                 document.getElementById('header').classList.add("text-animation")
                 var data = {
-                    "ucapan": "Selamat ulang tahun yang ke-18 asa! Semoga di umur yang semakin bertambah ini, diberikan kelancaran dalam menjalani hidup. Bertambahnya usia, bertambahnya juga rezeki, kami semua berharap kamu teurs menjadi pribadi yang berwibawa dan patut dicontoh. Di usia yang semakin bertambah, bertambah juga tanggung jawab hidup, semoga kamu bisa melewati semua halangan itu dan tetap bersemangatlah setiap hari, karena mungkin ada sesuatu yang baik yang sedang menantimu. Ini adalah hadiah yang kami persembahkan dengan sebaik mungkin, semoga tuhan selalu memberikanmu kesehatan serta kelancaran hidup, dan <b>terimakasih karena telah menjadi teman baik kami</b>. Muah!",
+                    "ucapan": "Selamat ulang tahun yang ke-18 asa! Semoga di umur yang semakin bertambah ini, diberikan kelancaran dalam menjalani hidup. Bertambahnya usia, bertambahnya juga rezeki, kami semua berharap kamu terus menjadi pribadi yang berwibawa dan patut dicontoh. Di usia yang semakin bertambah, bertambah juga tanggung jawab hidup, semoga kamu bisa melewati semua halangan itu dan tetap bersemangatlah setiap hari, karena mungkin ada sesuatu yang baik yang sedang menantimu. Ini adalah hadiah yang kami persembahkan dengan sebaik mungkin, semoga tuhan selalu memberikanmu kesehatan serta kelancaran hidup, dan <b>terimakasih karena telah menjadi teman baik kami</b>. Muah!",
                     "credit": "Sayang kami. Kevin, Kira, Jihan dan teman-teman."
                 }
                 descElement.innerHTML = `${data.ucapan}<br><br>${data.credit}`
