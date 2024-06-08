@@ -67,7 +67,7 @@ onload = async () => {
             var elapsedTime = now - initialClientTime;
             var adjustedServerTime = serverTime + elapsedTime;
             var distance = countDownDate - adjustedServerTime;
-            var count = document.getElementById("countdown")
+            var count = document.getElementById("info")
 
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -75,9 +75,8 @@ onload = async () => {
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             if (distance > 0) {
-                if (getParameter() !== 'main.html') {
-                    try { document.getElementById('info').innerHTML = `<br><h1>redirecting...</h1>` } catch { }
-                    window.location.href = 'main.html'
+                if (getParameter() !== 'index.html') {
+                    window.location.href = 'index.html'
                 }
             } else {
                 loadMenu()
@@ -112,7 +111,7 @@ onload = async () => {
             window.location.href = 'index.html'
         } else {
             document.title = 'closed'
-            try { document.getElementById('info').innerHTML = `<br><h1>The event has over.</h1>` } catch { }
+            try { document.getElementById('info').innerHTML = `<p style="font-size: 25px;">the event has over.</p>` } catch { }
         }
     }
 }
