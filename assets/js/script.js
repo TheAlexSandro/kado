@@ -31,6 +31,8 @@ function loadFlower(query) {
 
                 if (deviceWidth <= 740) {
                     spaceDiv.style.marginTop = `1150px`
+                } else if (deviceWidth <= 768) {
+                    spaceDiv.style.marginTop = `1320px`
                 } else {
                     spaceDiv.style.marginTop = `1040px`
                 }
