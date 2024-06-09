@@ -20,9 +20,9 @@ function loadFlower(query) {
 
         setTimeout(() => {
             getBersiap.classList.add("text-section-animation-bersiap")
+            if (query == 'yes') { document.getElementById('main-audio').play() }
             document.getElementById('flower').classList.remove("container");
             setTimeout(() => {
-                if (query == 'yes') { document.getElementById('main-audio').play() }
                 document.body.style.overflowY = 'visible'
                 var textElement = document.getElementById("text");
                 var descElement = document.getElementById('desc')
@@ -58,7 +58,7 @@ onload = async () => {
     var birthday = true
 
     if (birthday == true) {
-        var countDownDate = new Date("Jun 10, 2024 00:00:00").getTime();
+        var countDownDate = new Date("Jun 09, 2024 13:17:00").getTime();
         var serverTime = await getServerTime();
         var initialClientTime = new Date().getTime();
 
